@@ -47,7 +47,7 @@ jobs:
     - name: Run APP
       env:
         ASPNETCORE_ENVIRONMENT: ${{secrets.ENV}} # 运行环境
-        Ray_BiliBiliCookie__CookieStr: ${{secrets.COOKIESTR}}
+        Ray_BiliBiliCookie__CookieStr: ${{secrets.your_cookie}}
         Ray_BiliBiliCookie__UserId: ${{secrets.USERID}} # 已过时
         Ray_BiliBiliCookie__DedeUserID: ${{secrets.DEDEUSERID}} # 已过时
         Ray_BiliBiliCookie__SessData: ${{secrets.SESSDATA}} # 已过时
