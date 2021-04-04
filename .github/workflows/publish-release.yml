@@ -23,7 +23,7 @@ jobs:
         
       - name: Publish and zip
         run: |
-          cd ./src/Ray.BiliBiliTool.Console
+          cd ./bili~auto/src/Ray.BiliBiliTool.Console
           dotnet publish --configuration Release --self-contained false -o ./bin/Publish/net5-dependent
           echo "dotnet Ray.BiliBiliTool.Console.dll" > ./bin/Publish/net5-dependent/start.bat
           dotnet publish --configuration Release --runtime win-x86 --self-contained true -p:PublishTrimmed=true -o ./bin/Publish/win-x86-x64
@@ -55,7 +55,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-net5-dependent.zip
+          asset_path: ./bili~auto/src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-net5-dependent.zip
           asset_name: bilibili-tool-v${{ github.event.inputs.version }}-net5-dependent.zip
           asset_content_type: application/zip
           
@@ -66,7 +66,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-win-x86-x64.zip
+          asset_path: ./bili~auto/src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-win-x86-x64.zip
           asset_name: bilibili-tool-v${{ github.event.inputs.version }}-win-x86-x64.zip
           asset_content_type: application/zip
 
@@ -77,7 +77,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-linux-arm.zip
+          asset_path: ./bili~auto/src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-linux-arm.zip
           asset_name: bilibili-tool-v${{ github.event.inputs.version }}-linux-arm.zip
           asset_content_type: application/zip
 
@@ -88,7 +88,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-linux-x64.zip
+          asset_path: ./bili~auto/src/Ray.BiliBiliTool.Console/bin/Publish/bilibili-tool-v${{ github.event.inputs.version }}-linux-x64.zip
           asset_name: bilibili-tool-v${{ github.event.inputs.version }}-linux-x64.zip
           asset_content_type: application/zip
 
