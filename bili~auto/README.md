@@ -25,7 +25,9 @@ BiliBiliTool
 还有其他一些辅助小功能，大家可以自己去自由探索~
 </h2>
 ##警告
+
 ![运行图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/run-exe.png)
+
 **注意：**
 - **本应用仅用于学习和测试，作者本人并不对其负责，请于运行测试完成后自行删除，请勿滥用！**
 - **所有代码都是开源且透明的，任何人均可查看，程序不会保存或滥用任何用户个人信息**
@@ -41,7 +43,9 @@ BiliBiliTool 就是收集了一系列的 B 站开放api，通过每日自动运�
 - 登录成功后，访问 `https://api.bilibili.com/x/web-interface/nav`，按 **F12** 打开"开发者工具"，按 **F5** 刷新一下
 - 在"开发者工具"面板中，点击 **网络（Network）**，在左侧的请求列表中，找到名称为 `nav` 的接口，点击它
 - 依次查找 **Headers** ——> **RequestHeader** ——> **cookie**，可以看到很长一串以英文分号分隔的字符串，复制整个这个cookie字符串，保存它们到记事本，待会儿会用到。
+- 
 ![获取Cookie图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/get-bilibili-web-cookie.jpg)
+
 ### 1.2. 第二步：配置 Cookie 并运行 BiliBiliTool
 运行 BiliBiliTool 有两种方式，一是通过 Github 的 Actions 实现线上的每天自动运行，二是通过下载Release包到本地或服务器运行。
 对于熟悉 Github 的朋友，推荐使用方式一 Github Actions，可以实现线上的每天自动运行，不需自己动手，一劳永逸。
@@ -56,14 +60,21 @@ Github Actions 是微软（巨硬）收购 G 站之后新增的内置 CI/CD 方�
 ![添加CookieStr图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/git-secrets-add-cookie.png)
 Ⅲ. **开启 Actions 并触发每日自动执行**
 刚 Fork 完，所有 Actions 都是默认关闭的，都配置好后，需要手动点击 Enable 开启 Actions。开启后请手动执行一次工作流，验证是否可以正常工作，操作步骤如下图所示：
+
 ![Actions图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/run-workflow.png)
+
 运行结束后，请查看运行日志：
+
 ![Actions日志图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/github-actions-log-1.png)
+
 ![Actions日志图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/github-actions-log-2.png)
+
 Actions 的执行策略默认是每天 0 点整触发运行，如要设置为指定的运行时间，请详见下面**常见问题**章节中的《**Actions 如何修改定时任务的执行时间？**》
 **建议每个人都设置下每日执行时间！不要使用默认时间！最好也不要设定在整点，错开峰值，避免 G 站的同一个IP在相同时间去请求 B 站接口，导致 IP 被禁！**
 如果配置了推送，执行成功后接收端会收到推送消息，如下所示为Server酱微信推送效果：
+
 ![微信推送图示](https://cdn.jsdelivr.net/gh/RayWangQvQ/BiliBiliTool.Docs@main/imgs/wechat-push.png)
+
 目前默认支持**Telegram推送、企业微信推送、钉钉推送、Server酱推送和酷推QQ推送**，如果需要推送到其他端，也可以配置为任意的可以接受消息的Api地址，关于如何配置推送请详见下面的**个性化自定义配置**章节。
 _如果执行出现异常，会收到了 GitHub Action 的错误邮件通知，请检查 Cookies 是不是失效了或者是否有 bug。_
 _如果是 Cookies 失效了，请从浏览器重新获取并更新到 Secrets 中。_
