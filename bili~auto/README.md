@@ -1,12 +1,10 @@
 <h1 align="center">
-
 BiliBiliTool
-
 </h1>
 
-</h2>
-来自于 
-
+</h2 align="center">
+来自于 ![RayWangQvQ/BiliBiliTool](https://github.com/RayWangQvQ/BiliBiliTool)
+去感谢他！
 </h2>
 
 </div>
